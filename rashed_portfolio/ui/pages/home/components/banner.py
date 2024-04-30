@@ -1,6 +1,7 @@
 import reflex as rx
 
 from rashed_portfolio.data.constants import ProfileData
+from rashed_portfolio.ui.constants.ui_constants import STARTING_COLOR
 
 
 def home_banner() -> rx.Component:
@@ -10,9 +11,9 @@ def home_banner() -> rx.Component:
                 src='/images/hero_image.png',
                 border_radius='15px',
                 margin='auto',
-                width=['90%', '90%', '50%', '50%', '50%'],
+                width=['90%', '90%', '70%', '60%', '60%'],
                 height=['auto', 'auto', 'auto', 'auto', 'auto'],
-                float=['none', 'none', 'left', 'left', 'left'],
+                float=['none', 'none', 'none', 'left', 'left'],
             ),
             rx.container(
                 rx.vstack(
@@ -33,13 +34,41 @@ def home_banner() -> rx.Component:
                     rx.text(
                         ProfileData.SHORT_DESCRIPTION,
                         color='gray',
-                        padding_top='20px',
-                        padding_bottom='20px',
+                        margin_top='20px',
+                        margin_bottom='20px',
                     ),
-                    rx.text('birth and other data'),
+                    banner_widget_one(
+                        icon='calendar-days',
+                        txt=ProfileData.BIRTHDAY,
+                    ),
+                    banner_widget_one(
+                        icon='phone',
+                        txt=ProfileData.PHONE,
+                        is_phone=True,
+                    ),
+                    banner_widget_one(
+                        icon='mail',
+                        txt=ProfileData.EMAIL,
+                        is_email=True,
+                    ),
+                    banner_widget_one(
+                        icon='map-pin',
+                        txt=ProfileData.CITY + ', ' + ProfileData.COUNTRY,
+                    ),
+                    rx.hstack(
+                        banner_widget_two(
+                            icon='facebook',
+                            url='https://www.facebook.com/rashedul.imsf/'
+                        ),
+                        banner_widget_two(
+                            icon='linkedin',
+                            url='https://www.linkedin.com/in/rashedulimsf/'
+                        ),
+                        margin_top='20px',
+                    )
                 ),
                 style={
-                    'padding': '25px',
+                    'padding': '50px',
                 }
             ),
             style={
@@ -50,4 +79,47 @@ def home_banner() -> rx.Component:
                 'box-shadow': '5px 5px 5px 5px rgba(0, 0, 0, 0.05)',
             }
         ),
+    )
+
+
+def banner_widget_two(
+        icon: str,
+        url: str,
+):
+    return rx.link(
+        rx.container(
+            rx.icon(icon, color='white'),
+            border_radius='6px',
+            background=STARTING_COLOR,
+            padding='10px',
+        ),
+        href=url,
+    )
+
+
+def banner_widget_one(
+        icon: str,
+        txt: str,
+        is_email: bool = False,
+        is_phone: bool = False
+):
+    f_txt = rx.text(txt)
+    if is_email:
+        f_txt = rx.link(
+            f_txt,
+            href=f'mailto:{txt}',
+            color='black',
+        )
+    elif is_phone:
+        f_txt = rx.link(
+            f_txt,
+            href=f'tel:{txt.replace(' ', '')}',
+            color='black',
+        )
+        
+    return rx.hstack(
+        rx.icon(icon, color=STARTING_COLOR),
+        f_txt,
+        padding_top='5px',
+        padding_bottom='5px',
     )
