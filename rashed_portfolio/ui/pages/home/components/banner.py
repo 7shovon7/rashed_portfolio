@@ -1,7 +1,5 @@
 import reflex as rx
 
-from rashed_portfolio.ui.utils.utils import get_css_display
-
 
 def hero_content():
     details_msg = 'You will begin to realise why this exercise is called the Dickens Pattern with reference to the ghost showing Scrooge some different futures.'
@@ -24,7 +22,6 @@ def hero_content():
             padding='20px 40px 20px 40px',
             background="linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(131,145,255,1) 0%, rgba(100,185,252,1) 100%)",
         ),
-        # hero_image(large=False),
         align_items=['center', 'center', 'center', 'baseline', 'baseline'],
         width=['100%', '100%', '100%', '50%', '50%'],
         padding=['30px', '30px', '30px', '0', '0'],
@@ -41,10 +38,7 @@ def hero_image(large: bool):
             src='/images/hero_image.png',
             height=['auto', 'auto', 'auto', '100%', '100%'],
             width=['100%', '100%', '100%', 'auto', 'auto'],
-            # display=get_css_display(large),
         ),
-        # align='center',
-        # justify='center',
         width=['100%', '100%', '100%', '50%', '50%'],
     )
     # return rx.center(
@@ -82,7 +76,6 @@ def home_banner() -> rx.Component:
     return rx.container(
         hero_content(),
         hero_image(large=True),
-        # align=['center', 'center', 'center', 'baseline', 'baseline'],
         background_color='#f9f9ff',
         padding_top='60px',
     )
