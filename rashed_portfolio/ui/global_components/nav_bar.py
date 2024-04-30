@@ -12,8 +12,7 @@ def navbar(active_item: Optional[str] = None):
             rx.center(
                 rx.text(
                     ProfileData.NICK_NAME.upper(),
-                    # class_name="text-4xl text-black-900 font-bold",
-                    color=STARTING_COLOR,
+                    color='white',
                     font_size='2.5rem',
                     font_weight='bold',
                 ),
@@ -25,7 +24,7 @@ def navbar(active_item: Optional[str] = None):
                 rx.icon_button(
                     rx.icon(
                         'menu',
-                        color=STARTING_COLOR,
+                        color='white',
                     ),
                     display=['flex', 'flex', 'flex', 'none', 'none'],
                     background='transparent',
@@ -35,15 +34,16 @@ def navbar(active_item: Optional[str] = None):
             )
         ),
         height='4.5em',
+        padding_top='20px',
     )
 
 
 def menu_items(active_item):
     def apply_color(item: str):
         if (active_item and active_item.lower() == item.lower()):
-            return STARTING_COLOR
+            return 'white'
         else:
-            return 'black'
+            return 'lightgray'
         
     items = []
     for item in MENU_ITEMS:
