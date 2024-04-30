@@ -8,5 +8,5 @@ MENU_ITEMS = [
     'Contact',
 ]
 
-STARTING_COLOR = '#090979',
-ENDING_COLOR = '#00d4ff'
+STARTING_COLOR = '#8391ff',
+ENDING_COLOR = '#64b9fc'
