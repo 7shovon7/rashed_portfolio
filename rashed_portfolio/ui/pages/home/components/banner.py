@@ -1,5 +1,7 @@
 import reflex as rx
 
+from rashed_portfolio.data.constants import ProfileData
+
 
 def hero_content():
     details_msg = 'You will begin to realise why this exercise is called the Dickens Pattern with reference to the ghost showing Scrooge some different futures.'
@@ -8,7 +10,7 @@ def hero_content():
             'This is me'.upper(),
         ),
         rx.text(
-            'Rashedul Islam'.upper(),
+            ProfileData.PREFERRED_FULL_NAME.upper(),
             font_size='3rem',
             font_weight='bold',
             align='center',
