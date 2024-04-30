@@ -1,6 +1,6 @@
-from rashed_portfolio.ui.pages.home.home_page import index
-
 import reflex as rx
+
+from rashed_portfolio.ui.pages.home.home_page import index
 
 
 app = rx.App()

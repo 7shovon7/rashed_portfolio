@@ -1,0 +1,11 @@
+class ProfileData:
+    FULL_NAME = 'Rashedul Islam'
+    PREFERRED_FULL_NAME = 'Rashedul Islam'
+    NICK_NAME = 'Rashed'
+    TITLE = 'Junior UI/UX Developer'
+    SHORT_DESCRIPTION = 'You will begin to realise why this exercise is called the Dickens Pattern (with reference to the ghost showing Scrooge some different futures)'
+    BIRTHDAY = '1st August, 1993'
+    PHONE = '+32 467 72 72 87'
+    CITY = 'Ghent'
+    COUNTRY = 'Belgium'
+    EMAIL = 'rashedul.imsf@gmail.com'
