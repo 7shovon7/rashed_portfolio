@@ -8,10 +8,10 @@ def home_banner() -> rx.Component:
     return rx.container(
         rx.container(
             rx.image(
-                src='/images/hero_image.png',
+                src='/images/hero_image.jpeg',
                 border_radius='15px',
                 margin='auto',
-                width=['90%', '90%', '70%', '60%', '60%'],
+                width=['90%', '90%', '70%', '50%', '50%'],
                 height=['auto', 'auto', 'auto', 'auto', 'auto'],
                 float=['none', 'none', 'none', 'left', 'left'],
             ),
