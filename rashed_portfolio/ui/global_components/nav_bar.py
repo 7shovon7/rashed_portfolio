@@ -16,7 +16,8 @@ def navbar(active_item: Optional[str] = None):
                     font_size='2.5rem',
                     font_weight='bold',
                 ),
-                height='4.5em'
+                height='4.5em',
+                padding_left=['10px', '10px', '10px', '0', '0'],
             ),
             rx.spacer(),
             menu_items(active_item),
@@ -47,12 +48,18 @@ def menu_items(active_item):
         
     items = []
     for item in MENU_ITEMS:
-        items.append(rx.text(
-            item,
-            font_size='1.25em',
-            padding_left='10px',
-            color=apply_color(item),
-        ))
+        items.append(
+            rx.link(
+                rx.text(
+                    item.upper(),
+                    font_size='0.9em',
+                    font_weight='bold',
+                    padding_left='10px',
+                    color=apply_color(item),
+                ),
+                href='#',
+            )
+        )
 
     return rx.center(
         rx.hstack(
